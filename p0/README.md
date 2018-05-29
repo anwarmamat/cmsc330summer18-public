@@ -94,7 +94,7 @@ Next, we will install some gems.
 The OCaml package manager needs some initial configuration.
 
 * `opam init`
-* If it hangs at "Fetching repository information," hit Ctrl-C and try `opam init` again (pressing y when prompted). This may take awhile, be patient.
+* If it hangs at "Fetching repository information," hit Ctrl-C and try `opam init` again (pressing "y" when prompted). This may take awhile, be patient.
 * When prompted to modify `~/.bash_profile` (or another file) type "y".
 * `source ~/.bash_profile` (or the file mentioned above).
 
@@ -117,7 +117,7 @@ configure some things.
 * Add the line `module load ruby` to the file.
 * Add `module load ocaml`.
 * Add `module load rust`.
-* Add `eval \`opam config env\`` (these are **backticks** located to the left of the 1 key, not single quotes).
+* Add ``eval `opam config env` `` (these are **backticks** located to the left of the 1 key, not single quotes).
 * Close the file and run `source ~/.cshrc.mine`.
 
 Next, we'll install the gems.
