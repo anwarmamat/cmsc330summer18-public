@@ -85,7 +85,7 @@ We will first add the OCaml package archive.
 
 Next we will install all the packages we need.
 
-* `sudo apt-get install ruby-dev sqlite3 libsqlite3-dev ocaml ocaml-native-compilers camlp4 opam rust make m4 curl graphviz`
+* `sudo apt-get install ruby-dev sqlite3 libsqlite3-dev ocaml ocaml-native-compilers camlp4 opam make m4 curl graphviz`
 
 Next, we will install some gems.
 
