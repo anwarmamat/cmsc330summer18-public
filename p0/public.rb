@@ -99,7 +99,7 @@ def gem_version(name)
 end
 
 def ocaml_pkg_version(name)
-	`opam info #{name}` =~ /installed-version: #{VERSION}/ and $1
+	`opam info #{name}`.encode("UTF-8", "UTF-8") =~ /installed-version: #{VERSION}/ and $1
 end
 
 #

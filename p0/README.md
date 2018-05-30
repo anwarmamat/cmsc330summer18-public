@@ -122,10 +122,11 @@ configure some things.
 
 Next, we'll install the gems.
 
-* `gem install sqlite3 sinatra --install-dir ~/.gem`
+* `gem install --user-install sqlite3 sinatra
 
-Now, we configure the OCaml package manager and install some
-libraries.
+If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
+have successfully installed anyway. Now, we configure the OCaml package
+manager and install some libraries.
 
 * `opam init`
 * When prompted to modify `~/.cshrc` type "n".
