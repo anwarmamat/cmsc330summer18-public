@@ -1,3 +1,4 @@
+require "open3"
 require "minitest/autorun"
 
 #
@@ -62,7 +63,8 @@ def optional_warn(msg)
 end
 
 def match_version(cmd)
-	`#{cmd}` =~ VERSION and $1
+	stdout, stderr, _ = Open3.capture3(cmd)
+	(stdout =~ VERSION or stderr =~ VERSION) and $1
 end
 
 #
@@ -78,7 +80,7 @@ def opam_version
 end
 
 def graphviz_version
-	match_version("dot -V |& cat")
+	match_version("dot -V")
 end
 
 def rust_version

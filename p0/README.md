@@ -56,7 +56,9 @@ to install the required gems.
 
 * `sudo gem install sqlite3 sinatra`
 
-The OCaml package manager needs some initial configuration.
+If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
+have successfully installed anyway. The OCaml package manager needs
+some initial configuration.
 
 * `opam init`
 * When prompted to modify `~/.bash_profile` (or another file) type "y".
@@ -91,18 +93,22 @@ Next, we will install some gems.
 
 * `sudo gem install sqlite3 sinatra`
 
-The OCaml package manager needs some initial configuration.
+If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
+have successfully installed anyway. The OCaml package manager needs
+some initial configuration.
 
 * `opam init`
-* If it hangs at "Fetching repository information," hit Ctrl-C and try `opam init` again (pressing "y" when prompted). This may take awhile, be patient.
-* When prompted to modify `~/.bash_profile` (or another file) type "y".
-* `source ~/.bash_profile` (or the file mentioned above).
+* If it hangs at "Fetching repository information" press Enter. This may take awhile, be patient.
+* When prompted to modify `~/.profile` (or another file) type "n".
+* Open `~/.profile` (or the file mentioned above) in your text editor (probably emacs).
+* Add ``eval `opam config env` `` (these are **backticks** located to the left of the 1 key, not single quotes).
+* Save the file and run `source ~/.profile` (or the file mentioned above).
 
 Next, we will install the required OCaml packages through OPAM.
 
 * `opam install ocamlfind ounit utop`
 
-Finally, we'll install Rust.
+Finally, we'll install Rust. Note this may take some time.
 
 * `curl https://sh.rustup.rs -sSf | sh`
 
@@ -117,8 +123,7 @@ configure some things.
 * Add the line `module load ruby` to the file.
 * Add `module load ocaml`.
 * Add `module load rust`.
-* Add ``eval `opam config env` `` (these are **backticks** located to the left of the 1 key, not single quotes).
-* Close the file and run `source ~/.cshrc.mine`.
+* Save the file and run `source ~/.cshrc.mine`.
 
 Next, we'll install the gems.
 
@@ -130,4 +135,6 @@ manager and install some libraries.
 
 * `opam init`
 * When prompted to modify `~/.cshrc` type "n".
+* Add ``eval `opam config env` `` (these are **backticks** located to the left of the 1 key, not single quotes) to your `~/.cshrc.mine` file.
+* Save the file and run `source ~/.cshrc.mine`.
 * `opam install ocamlfind ounit utop`
