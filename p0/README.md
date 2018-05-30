@@ -122,7 +122,7 @@ configure some things.
 
 Next, we'll install the gems.
 
-* `gem install --user-install sqlite3 sinatra
+* `gem install --user-install sqlite3 sinatra`
 
 If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
 have successfully installed anyway. Now, we configure the OCaml package
