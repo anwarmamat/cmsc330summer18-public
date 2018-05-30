@@ -4,7 +4,7 @@ require "minitest/autorun"
 # Constants
 #
 
-VERSION = /(\d+\.\d+\.\d+)/
+VERSION = /(\d+(\.\d+){,2})/
 # OCAML_VERSION = "4.06.0"
 
 #
