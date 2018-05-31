@@ -2,7 +2,7 @@ class LinkedList
     
     # add : Object ->
     # Adds an elements to the linked list
-    def add
+    def add(elem)
     end
 
     # to_s : -> String
