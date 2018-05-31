@@ -47,7 +47,10 @@ First, we will install the Homebrew package manager.
 
 * `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-Once this has finished, we can install some of the software through Homebrew.
+Check your Ruby version with `ruby -v`. If it's older than 2.2.2 you'll need
+to install a newer version using `brew install ruby`.
+
+Next, we can install some of the software through Homebrew.
 
 * `brew install ocaml opam rust graphviz`
 
@@ -57,8 +60,9 @@ to install the required gems.
 * `sudo gem install sqlite3 sinatra`
 
 If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
-have successfully installed anyway. The OCaml package manager needs
-some initial configuration.
+have successfully installed anyway.
+
+The OCaml package manager needs some initial configuration.
 
 * `opam init`
 * When prompted to modify `~/.bash_profile` (or another file) type "y".
@@ -87,15 +91,16 @@ We will first add the OCaml package archive.
 
 Next we will install all the packages we need.
 
-* `sudo apt-get install ruby-dev sqlite3 libsqlite3-dev ocaml ocaml-native-compilers camlp4 opam make m4 curl graphviz`
+* `sudo apt-get install ruby-dev sqlite3 libsqlite3-dev ocaml ocaml-native-compilers camlp4 opam make m4 curl graphviz default-jre`
 
 Next, we will install some gems.
 
 * `sudo gem install sqlite3 sinatra`
 
 If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
-have successfully installed anyway. The OCaml package manager needs
-some initial configuration.
+have successfully installed anyway.
+
+The OCaml package manager needs some initial configuration.
 
 * `opam init`
 * If it hangs at "Fetching repository information" press Enter. This may take awhile, be patient.
@@ -120,9 +125,13 @@ configure some things.
 
 * Open `~/.cshrc.mine` in your text editor (probably emacs).
 * If you have a line that says `limit maxproc 20`, delete it.
-* Add the line `module load ruby` to the file.
-* Add `module load ocaml`.
-* Add `module load rust`.
+* Add the following to the end of the file:
+  ```
+  module load ruby
+  module load ocaml
+  module load rust
+  tap -q java
+  ```
 * Save the file and run `source ~/.cshrc.mine`.
 
 Next, we'll install the gems.
@@ -130,8 +139,9 @@ Next, we'll install the gems.
 * `gem install --user-install sqlite3 sinatra`
 
 If it hangs installing documentation for Sinatra, hit Ctrl-C. It will
-have successfully installed anyway. Now, we configure the OCaml package
-manager and install some libraries.
+have successfully installed anyway.
+
+Now, we configure the OCaml package manager and install some libraries.
 
 * `opam init`
 * When prompted to modify `~/.cshrc` type "n".
