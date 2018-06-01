@@ -28,7 +28,7 @@ There are many possible answers. Here are some:
 * Ruby is concise
 * **Ruby is dynamically typed**
 
-For me the most last one if the most consequential. Let's take a look
+For me the last one if the most consequential. Let's take a look
 at some examples.
 
 <!--- NOTE: Have two shells next two each other open. One with the
@@ -69,7 +69,8 @@ end
 This outputs "A" as we expect.
 
 Let's look at another difference. In Java we know that if we have
-an ArrayList that the types of elements are fixed by its generic.
+an ArrayList that the types of elements are fixed by its type
+parameter.
 
 ```java
 ArrayList<Integer> arr = new ArrayList<>();
