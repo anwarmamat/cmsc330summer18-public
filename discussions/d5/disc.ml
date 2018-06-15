@@ -7,11 +7,11 @@ let rec map (f : 'a -> 'b) (xs : 'a listy) : 'b listy =
   Nil
 
 (* Folds left-to-right over xs with f and accumulator a. *)
-let rec foldl (f : 'a -> 'b -> 'c) (a : 'a) (xs : 'b listy) : 'c =
+let rec foldl (f : 'a -> 'b -> 'a) (a : 'a) (xs : 'b listy) : 'a =
   a
 
 (* Folds right-to-left over xs with f and accumulator a. *)
-let rec foldr (f : 'b -> 'a -> 'c) (xs : 'b listy) (a : 'a) : 'c =
+let rec foldr (f : 'b -> 'a -> 'a) (xs : 'b listy) (a : 'a) : 'a =
   a
 
 (* Returns (as an option) the last element that satisfies predicate p.
