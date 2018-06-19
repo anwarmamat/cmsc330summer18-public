@@ -1,0 +1,11 @@
+# Submit server .submit file for
+#  Course CMSC330
+#  Project D6: Are You Having Fun?
+
+courseName=CMSC330
+semester=201805
+projectNumber=D6
+courseKey=70fcfb44e65bd332
+authentication.type=ldap
+baseURL=https://submit.cs.umd.edu:443/summer2018
+submitURL=https://submit.cs.umd.edu:443/summer2018/eclipse/SubmitProjectViaEclipse
