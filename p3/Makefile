@@ -17,6 +17,12 @@ $(PUBLIC_RESULT): $(CMO_DEPENDS) public.ml
 $(VISUALIZE_RESULT): $(CMO_DEPENDS) viz.ml
 	ocamlfind $(CC) -o $@ -linkpkg -package $(PACKS) -g $(CMO_DEPENDS) viz.ml
 
+sets.cmo: sets.ml sets.cmi
+	$(CC) -o $@ -c sets.ml
+
+sets.cmi: sets.mli
+	$(CC) -o $@ -c sets.mli
+
 nfa.cmo: nfa.ml nfa.cmi
 	$(CC) -o $@ -c nfa.ml
 

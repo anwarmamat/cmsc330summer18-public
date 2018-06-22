@@ -121,9 +121,9 @@ This looks like:
 
 Utility Functions
 -----------------
-We have included correct implementations of the [set functions from P2A](../p2a#part-4-set-implementation-using-lists). You
-may use these in your solution. We have also provided a number of other potentially
-useful functions.
+If you would like to use sets, and we recommend doing so, replace `sets.ml`
+with the set functions you implemented from P2A. We have also provided a
+number of other potentially useful functions.
 
 **explode s**
 
@@ -133,7 +133,7 @@ useful functions.
 **fix comp f x0**
 
 * **Type:** `('a -> 'a -> bool) -> ('a -> 'a) -> 'a -> 'a`
-* **Description:** Takes an equality predicate `comp`, function `f`, and initial value `x0` and computes the fixpoint of `f` by iteration starting from `x0` and using `comp` to determine equality. (This might be helpful if you decide to implement `e_closure` and `nfa_to_dfa` by fixpoint iteration. The [following document](fixpoint.pdf) may be a useful reference.)
+* **Description:** Takes an equality predicate `comp`, function `f`, and initial value `x0` and computes the fixpoint of `f` by iteration starting from `x0` and using `comp` to determine equality. (This might be helpful if you decide to implement `e_closure` and `nfa_to_dfa` by fixpoint iteration.
 
 Part 1: NFAs
 ------------
