@@ -1,11 +1,11 @@
 # Submit server .submit file for
-#  Course cmsc330
-#  Project p4: Regular Expression Interpreter
+#  Course CMSC330
+#  Project P3: Regular Expression Interpreter
 
-courseName=cmsc330
-semester=201801
-projectNumber=p4
-courseKey=2a8ed246262d965b
+courseName=CMSC330
+semester=201805
+projectNumber=P3
+courseKey=70fcfb44e65bd332
 authentication.type=ldap
-baseURL=https://submit.cs.umd.edu:443/spring2018
-submitURL=https://submit.cs.umd.edu:443/spring2018/eclipse/SubmitProjectViaEclipse
+baseURL=https://submit.cs.umd.edu:443/summer2018
+submitURL=https://submit.cs.umd.edu:443/summer2018/eclipse/SubmitProjectViaEclipse
