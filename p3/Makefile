@@ -40,4 +40,4 @@ testUtils.cmo testUtils.mli: nfa.cmo regexp.cmo testUtils.ml
 
 clean:
 	@echo "Cleaning object files and executables"
-	-@rm -f $(PROGS) public.cm[oi] viz.cm[oi] nfa.cm[oi] regexp.cm[oi] testUtils.cm[oi] oUnit*.log oUnit*.cache
+	-@rm -f $(PROGS) public.cm[oi] viz.cm[oi] nfa.cm[oi] regexp.cm[oi] sets.cm[oi] testUtils.cm[oi] oUnit*.log oUnit*.cache
