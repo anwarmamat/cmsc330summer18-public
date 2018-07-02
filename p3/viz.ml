@@ -19,6 +19,7 @@ let string_of_ed show lst = List.fold_left (fun acc ((s1, _), c, p, (s2, _)) ->
 let write_nfa_to_graphviz (show : 'q -> string) (nfa : ('q, char) nfa_t) : bool =
   let name = "output.viz" in
   let ss, fs, ts = nfa.q0, nfa.fs, nfa.delta in
+  let sv = (show ss, List.mem ss fs) in
   let (vt, ed) = List.fold_left (fun (vt, ed) (v1, c, v2) ->
       let v1' = (show v1, List.mem v1 fs) in
       let v2' = (show v2, List.mem v2 fs) in
@@ -29,7 +30,7 @@ let write_nfa_to_graphviz (show : 'q -> string) (nfa : ('q, char) nfa_t) : bool 
       let e = (v1', c', pair, v2') in
       (nodup v2' (nodup v1' vt), nodup e ed)) ([], []) ts in
   let ed = (("-1", false), " ", false, ((show ss), List.mem ss fs))::ed in
-  let dot = init_str ^ (string_of_vtx show vt) ^ (string_of_ed show ed) ^ end_str in
+  let dot = init_str ^ (string_of_vtx show (sv::vt)) ^ (string_of_ed show ed) ^ end_str in
   let file = open_out_bin name in
   output_string file dot;
   flush file;
