@@ -1,7 +1,7 @@
 # Project 4A: SmallC Parser
 CMSC 330, Summer 2018
 
-Due July 9th at 11:59 PM (Late July 10th at 11:59 PM)
+Due July 8th at 11:59 PM (Late July 9th at 11:59 PM)
 
 P/R/S: 48/ 52/ 0
 
