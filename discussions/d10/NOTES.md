@@ -1,10 +1,11 @@
 # Notes 10: NanOCaml Syntax
 Date: Tuesday July 3rd
 
-<!--- ADMIN: Quiz next discussion. Start working on the
-      next project. -->
+<!--- ADMIN: Quiz next discussion. Come to office hours to work on
+      CFG questions. Late deadline will be useful for many of you.
+      Start working on the next project. -->
 
-<!--- TIME: 30 minutes -->
+<!--- TIME: 40 minutes -->
 
 ## Syntax and semantics
 
@@ -23,6 +24,64 @@ Both are critical aspects of language design.
 We are implementing a stripped down version of OCaml called NanOCaml.
 Today, we will focus only on the syntax of NanOCaml, in other words
 writing the lexer and parser.
+
+![CFG](grammar.png)
+
+This is a context-free grammar, although often times in practice an
+equivalent but slightly different type of grammar is used called
+Backus-Naur form (or BNF).
+
+**Example.** Prove that the string `((fun x -> x) y)` is in the
+NanOCaml language.
+
+**Proof.** To do so we provide a left-most (or right-most) derivation
+of the string, starting from the starting non-terminal `T`.
+
+```
+T -> (T T) -> ((fun X -> T) T) -> ((fun x -> T) T)
+  -> ((fun x -> X) T) -> ((fun x -> x) T) -> ((fun x -> x) X)
+  -> ((fun x -> x) y)
+```
+
+Simply giving the derivation is proof that the string is in our
+language.
+
+## A variant
+
+This grammar was carefully designed to make all the parentheses
+explicit. Suppose we had a variation of NanOCaml that didn't do
+this.
+
+![CFG](amb.png)
+
+This is problematic because the grammar is now ambiguous. Introducing
+non-parenthesized application leaves ambiguous how to associate
+application.
+
+**Example.** Prove that the grammar above is ambiguous.
+
+**Proof.** We provide two left-most derivations of the same string.
+For this example, I will provide two left-most derivation so `f a b`.
+
+```
+1. T -> T T -> T T T -> X T T -> f T T -> f X T -> f a T -> f a X -> f a b
+2. T -> T T -> X T T -> f T T -> f X T -> f a T -> f a X -> f a b
+```
+
+The first derivation has a parse tree that associates to the left
+(this is our normal associativity for function application). Whereas
+the second associates to the right. This is not desirable.
+
+We could modify the grammar to force associativity on one side (this
+would fix the ambiguity problem and indeed this is what you'll do in
+the SmallC project). But our original grammar works fine since it
+forces parentheses on everything.
+
+## NanOCaml in OCaml
+
+Back to the grammar we had earlier. We need to write a lexer and
+parser so the first step is to come up with the correct data types.
+We need a token type for the lexer and an AST type for the parser.
 
 ![CFG](grammar.png)
 
@@ -70,5 +129,5 @@ left factoring.
 
 ![CFG](factored_grammar.png)
 
-<!--- TIME: 50 minutes -->
+<!--- TIME: 40 minutes -->
 <!--- CUE: Have students work on the graded exercise. -->
