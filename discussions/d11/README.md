@@ -14,13 +14,12 @@ notes. You will need to write the auxiliary `subst` function to help you.
 
 The other function you must write, `evaler_e'` uses the environment semantics
 from Figure 2 of the notes. We've already written `evaler_e` that simply
-calls this function and extracts the body from the resulting closure. Notice
-that our semantics define a partial function (i.e. not all inputs have
-an output). You may find the `List.assoc_opt` function helpful for looking
-things up in your environment.
+calls this function and extracts the body from the resulting closure. You may
+find the `List.assoc_opt` function helpful for looking things up in your environment.
 
 Note, it should be the case that `evaler_s(t) = evaler_e(t)` for all terms `t`.
-**If a term does not evaluate under our semantics, your must raise
+Also, our semantics define a partial function (i.e. not all inputs have
+an output).  **If a term does not evaluate under our semantics, your must raise
 a runtime error (any will do).** For example, attempting to evaluate an
 unbound variable or apply something other than a function would yield an
 error.
