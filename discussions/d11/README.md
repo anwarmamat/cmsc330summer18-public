@@ -19,7 +19,7 @@ find the `List.assoc_opt` function helpful for looking things up in your environ
 
 Note, it should be the case that `evaler_s(t) = evaler_e(t)` for all terms `t`.
 Also, our semantics define a partial function (i.e. not all inputs have
-an output).  **If a term does not evaluate under our semantics, your must raise
+an output).  **If a term does not evaluate under our semantics, you must raise
 a runtime error (any will do).** For example, attempting to evaluate an
 unbound variable or apply something other than a function would yield an
 error.
