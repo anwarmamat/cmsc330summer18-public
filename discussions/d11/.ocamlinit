@@ -1,0 +1,5 @@
+#directory "_build";;
+#load "str.cma";;
+#load "lexer.cmo";;
+#load "parser.cmo";;
+#load "evaler.cmo";;
