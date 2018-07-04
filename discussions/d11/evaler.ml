@@ -19,4 +19,4 @@ let rec evaler_e (t : expr) : expr =
 
 (* Evaluates term t in environment e. *)
 and evaler_e' (e : env) (t : expr) : closure =
-  Closure (e, t)
+  Closure (t, e)
