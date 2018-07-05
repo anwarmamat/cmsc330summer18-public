@@ -1,11 +1,11 @@
 # Submit server .submit file for
-#  Course cmsc330
-#  Project p3a: SmallC Parser
+#  Course CMSC330
+#  Project P4A: SmallC Parser
 
-courseName=cmsc330
-semester=201801
-projectNumber=p3a
-courseKey=2a8ed246262d965b
+courseName=CMSC330
+semester=201805
+projectNumber=P4A
+courseKey=70fcfb44e65bd332
 authentication.type=ldap
-baseURL=https://submit.cs.umd.edu:443/spring2018
-submitURL=https://submit.cs.umd.edu:443/spring2018/eclipse/SubmitProjectViaEclipse
+baseURL=https://submit.cs.umd.edu:443/summer2018
+submitURL=https://submit.cs.umd.edu:443/summer2018/eclipse/SubmitProjectViaEclipse
