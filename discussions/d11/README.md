@@ -1,5 +1,5 @@
 # Discussion 11: NanOCaml Semantics
-Due: Thursday July 5th at 11:59:59PM
+Due: Friday July 6th at 11:59:59PM
 
 Points: 50P/50R/0S
 
