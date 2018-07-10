@@ -21,7 +21,7 @@ Up to this point your exposure to OCaml has been in an effort to familiarize you
 
 In this project, you will implement a small subset of an interpreter for SmallC, a small C-like language. The language supports variables, `int` and `bool` types, equality and comparison operations, math and boolean operations, control flow, and printing, all while maintaining static type-safety and being Turing complete!
 
-The language consists of expressions from the `expr` type and statements from the `stmt` type. These algebraic types can be used to represent the full space of properly formed SmallC programs. Their definitions are found in the `types.ml` file. This file should be a constant reference to the data types involved in successfully working with SmallC.
+The language consists of expressions from the `expr` type and statements from the `stmt` type. These algebraic types can be used to represent the full space of properly formed SmallC programs. Their definitions are found in the `smallCTypes.ml` file. This file should be a constant reference to the data types involved in successfully working with SmallC.
 
 This project is the second part of a project you will do later in the semester, in which you will write the parser for SmallC. In order to run SmallC code it first goes through a lexer, then a parser, and then this interpreter. The lexer and parser are both provided for this project, but later you will write a parser of your own! 
 
@@ -36,7 +36,7 @@ To begin this project, you will need to commit any uncommitted changes to your l
   - **lexer.ml** and **parser.ml**: Replace these files if you would like to use the interface.
   - **public.ml** and **public_inputs/**: The public test driver file and the SmallC input files to go with it, respectively.
   - **interface.ml**: A frontend to your interpreter used to build the `interface` executable target. This is explained in more detail below.
-  - **types.ml**: This file contains all type definitions used in this project.
+  - **smallCTypes.ml**: This file contains all type definitions used in this project.
   - **utils.ml** and **testUtils.ml**: These files contain functions that we have written for you and for us that aid in testing and debugging. The small part of **utils.ml** that concerns you in implementing this project is called out very explicitly when it is needed later in the document, and otherwise you should not need to look at either of these files.
 - Submission Scripts and Other Files
   - **submit.rb**: Execute this script to submit your project to the submit server.
@@ -64,7 +64,7 @@ The heart of SmallC is your evaluator. We have already implemented `Lexer` and `
 
 - Statements represent the structure of a program - declarations, assignments, control flow, and prints in the case of SmallC. - Expressions represent operations on data - variable lookups, mathematical and boolean operations, and comparison. Expressions can't affect the environment, and as a result only return a `value` containing the value of the expression.
 
-You are responsible for implementing two functions, `eval_expr` and `eval_stmt` in that order. Each of these takes as an argument an `environment` (given in `types.ml`) that is an association list. An association list is a list of pairs (2-tuples) where the key is the first element of the pair and the value is the second element. Elements earlier in the list override elements later in the list. In our case the association list is of type `(string * value) list` where the string is the id name and the value is the current value of that id. **The List module has many useful functions for working with association lists**. Statements may change the values of variables, so `eval_stmt` returns a possibly updated environment.
+You are responsible for implementing two functions, `eval_expr` and `eval_stmt` in that order. Each of these takes as an argument an `environment` (given in `smallCTypes.ml`) that is an association list. An association list is a list of pairs (2-tuples) where the key is the first element of the pair and the value is the second element. Elements earlier in the list override elements later in the list. In our case the association list is of type `(string * value) list` where the string is the id name and the value is the current value of that id. **The List module has many useful functions for working with association lists**. Statements may change the values of variables, so `eval_stmt` returns a possibly updated environment.
 
 A formal operational semantics of SmallC can be found in [`semantics.pdf`][semantics document]. We highly recommend you read this document as you work to clear up any possible ambiguity introduced by the English explanations below. The formal semantics do not, however, define error cases such as addition between a boolean and an integer and therefore represent a stuck reduction. The expected behavior for these irreducable error cases are defined only in this document and can be boiled down to the following rules:
 - Any expression containing division by zero should raise a DivByZero error when evaluated.
