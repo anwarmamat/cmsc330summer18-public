@@ -9,7 +9,7 @@ type run_context = {filename : string option; print_report : bool; unparse : boo
 let print_usage () =
   print_string "\nThis file functions as a driver for interfacing with the SmallC language\n\n";
   print_string "Usage:\n";
-  print_string "\tsmallc <filename> : Simply run the SmallC program in file <filename> and exit\n";
+  print_string "\tinterface <filename> : Simply run the SmallC program in file <filename> and exit\n";
   print_string "Flags:\n";
   print_string "\t--unparse / -U : Add one of these flags to print the stmt datatype representing the program in <filename> instead of evaluating it\n";
   print_string "\t--report / -R : Add one of these flags to add a listing of variable bindings created by your program. Great for debugging!\n\n";
